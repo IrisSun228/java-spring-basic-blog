@@ -9,6 +9,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class BlogController {
     private PostRepository postRepository;
 
+    public BlogController(PostRepository postRepository) {
+        this.postRepository = postRepository;
+    }
+
     @RequestMapping("/")
     public String listPosts(ModelMap modelMap) {
         modelMap.put("title", "Blog Post 1");
